@@ -37,15 +37,12 @@
 			<scope>runtime</scope>
 		</dependency>
 		
-		
-		
-		
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -74,16 +71,34 @@
                   <target>1.8</target>
               </configuration>
         </plugin>
+		
+		<plugin>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.8-SNAPSHOT</version>
+		</plugin>
+		
 		</plugins>
 	</build>
-	<distributionManagement>
-    <repository>
-        <id>central</id>
-        <name>ip-172-31-21-184.ap-southeast-1.compute.internal-releases</name>
-        <url>http://54.169.50.113:8082/artifactory/Pipeline-libs-release-local</url>
-    </repository>
-</distributionManagement>
+	
+	<reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <!-- select non-aggregate reports -->
+              <report>report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
 	
 
-
+	
+	
 </project>
