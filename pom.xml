@@ -18,7 +18,18 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
-
+	
+	
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>WebPageJob</name>
+        <url>http://18.141.200.17:8082/artifactory/WebPageJob/</url>
+    </repository>
+</distributionManagement>
+	
+	
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.sonarsource.scanner.maven</groupId>
